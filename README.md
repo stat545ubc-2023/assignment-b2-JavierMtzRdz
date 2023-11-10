@@ -57,7 +57,7 @@ df2 %>%
   theme_minimal()
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" height="450px" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 ### Example 2:
 
@@ -88,7 +88,7 @@ df2 %>%
   theme_minimal()
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" height="450px" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ### Example 3:
 
@@ -116,4 +116,4 @@ idx_gap %>%
   theme_minimal()
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" height="450px" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
