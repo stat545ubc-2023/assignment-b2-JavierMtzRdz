@@ -9,6 +9,8 @@
 .Ruserdata
 .Rproj
 .Rproj.user
+*.Rproj
+
 
 # Compiled junk
 *.o

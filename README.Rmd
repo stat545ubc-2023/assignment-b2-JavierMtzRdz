@@ -43,7 +43,7 @@ library(lubridate)
 
 In this example, the function creates a time series and sets an index using the `values` column, with the base observation set at `2023-01-01`.
 
-```{r fig.height=3, dpi=300, out.height='350px'}
+```{r fig.height=4, dpi=300, out.height='450px'}
 # Toy dataset
 set.seed(545)
 
@@ -78,7 +78,7 @@ df2 %>%
 
 Using the toy dataset from earlier, this code chunk generates an indexed variable taking the average values of multiple observations as reference. Specifically, it computes the average for the year 2023. A warning is issued in case this operation was not intended.
 
-```{r fig.height=3, dpi=300, out.height='350px'}
+```{r fig.height=4, dpi=300, out.height='450px'}
 # Index generation 
 
 df2 <- df %>% 
@@ -103,7 +103,7 @@ df2 %>%
 
 In this section, we indexed the GDP per capita for Oceania countries taking the year 1952 as the reference.
 
-```{r fig.height=3, dpi=300, out.height='350px'}
+```{r fig.height=4, dpi=300, out.height='450px'}
 library(gapminder)
 
 # Creating the country-wise index
