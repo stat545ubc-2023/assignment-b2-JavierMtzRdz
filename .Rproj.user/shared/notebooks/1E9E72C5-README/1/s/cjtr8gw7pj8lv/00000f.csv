@@ -1,0 +1,7 @@
+"0","df2 <- df %>% 
+  indexing(values,
+           year(date) == 2023)
+"
+"2","Error in UseMethod(""pull"") : 
+  no applicable method for 'pull' applied to an object of class ""function""
+"
