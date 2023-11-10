@@ -36,3 +36,5 @@ test_that("Testing indexing() function", {
                  "More than one row is being used as a reference.")
 
 })
+
+rm('df')

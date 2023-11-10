@@ -1,6 +1,6 @@
 Package: indexing
 Title: Generates an Index from a Variable Based on Specified Observations
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Javier", "Martinez-Rodriguez", , "javier.mr@stat.ubc.ca", 
     role = c("aut", "cre"))
