@@ -32,7 +32,7 @@ test_that("Testing indexing() function", {
   # This test evaluates the warning when More than one row is being used as a reference period.
   expect_warning(indexing(df,
                           values,
-                          year(date) == 2023),
+                          lubridate::year(date) == 2023),
                  "More than one row is being used as a reference.")
 
 })
