@@ -1,0 +1,21 @@
+Package: indexing
+Title: Generates an Index from a Variable Based on Specified Observations
+Version: 1.0.0
+Authors@R: 
+    person("Javier", "Martinez-Rodriguez", , "javier.mr@stat.ubc.ca", 
+    role = c("aut", "cre"))
+Description: This package includes a function called `indexing()`. It allows you to create an index from a variable, using specified observations as reference points.
+License: MIT + file LICENSE
+Imports: 
+    dplyr,
+    magrittr,
+    rlang
+Suggests:
+    gapminder,
+    lubridate,
+    ggplot2,
+    testthat (>= 3.0.0)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Config/testthat/edition: 3
