@@ -2,16 +2,16 @@
 % Please edit documentation in R/indexing.R
 \name{indexing}
 \alias{indexing}
-\title{Indexing a series}
+\title{Indexing a Series}
 \usage{
 indexing(.x, col_from, ..., col_to = index, n_base = 100)
 }
 \arguments{
 \item{.x}{Tidy dataset.}
 
-\item{col_from}{Column of a numeric variable to be indexed.}
+\item{col_from}{Column containing the numeric variable to be indexed.}
 
-\item{...}{Components to select the base observation(s)}
+\item{...}{Components to select the base observation(s).}
 
 \item{col_to}{Column to store the result (default is 'index').}
 
@@ -21,8 +21,8 @@ indexing(.x, col_from, ..., col_to = index, n_base = 100)
 Returns the tidy dataset with the indexed column
 }
 \description{
-This package includes a function called \code{indexing()}. It allows you to create
-an index from a variable, using specified observations as reference points.
+The \code{indexing()} function enables the creation of an index from a numeric variable,
+using specified observations as reference points.
 }
 \examples{
 # Example 1: ---------------------------------------------------------------------

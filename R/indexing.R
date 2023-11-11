@@ -1,12 +1,12 @@
-#' Indexing a series
+#' Indexing a Series
 #'
-#' This package includes a function called `indexing()`. It allows you to create
-#' an index from a variable, using specified observations as reference points.
+#' The `indexing()` function enables the creation of an index from a numeric variable,
+#' using specified observations as reference points.
 #'
 #' @param .x Tidy dataset.
-#' @param col_from Column of a numeric variable to be indexed.
+#' @param col_from Column containing the numeric variable to be indexed.
 #' @param col_to Column to store the result (default is 'index').
-#' @param ... Components to select the base observation(s)
+#' @param ... Components to select the base observation(s).
 #' @param n_base Base value for the index (default is 100).
 #'
 #' @importFrom magrittr %>%
@@ -160,11 +160,13 @@ indexing <- function (.x, col_from,
   ct <- rlang::enquo(col_to)
   group_vars <- rlang::enquos(...)
 
-  if(!is.numeric(.x %>% dplyr::pull(!!cf))) {
+  # Check if the specified column contains numeric data
+  if (!is.numeric(.x %>% dplyr::pull(!!cf))) {
     stop(paste0("'", dplyr::as_label(cf),
                 "' is not a numeric variable."))
   }
 
+  # Determine the number of rows in the base dataset
   rows <- .x %>%
     dplyr::filter(!!!group_vars) %>%
     dplyr::mutate(rows = dplyr::n()) %>%
@@ -172,22 +174,21 @@ indexing <- function (.x, col_from,
     ifelse(identical(., integer(0)),
            ., max(.))
 
+  # Check if a reference row is found
   if (is.na(rows)) stop("Reference not found.")
 
+  # Warn if more than one row is being used as a reference
   if (rows > 1) warning("More than one row is being used as a reference.")
 
+  # Calculate the index using the specified formula
   .x <- .x %>%
-    dplyr::mutate(!!ct := (!!cf*n_base)/
+    dplyr::mutate(!!ct := (!!cf * n_base) /
                     ifelse(
-      sum(ifelse(!!!group_vars,
-                 1, 0)) == 1,
-      sum(ifelse(!!!group_vars ,
-                 !!cf, 0)),
-      sum(ifelse(!!!group_vars ,
-                 !!cf, 0))/
-        sum(ifelse(!!!group_vars ,
-                   1, 0))
-    ))
+                      sum(ifelse(!!!group_vars, 1, 0)) == 1,
+                      sum(ifelse(!!!group_vars, !!cf, 0)),
+                      sum(ifelse(!!!group_vars, !!cf, 0)) /
+                        sum(ifelse(!!!group_vars, 1, 0))
+                    ))
 
   return(.x)
 }
